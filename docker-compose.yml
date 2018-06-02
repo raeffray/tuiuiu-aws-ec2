@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  mysql:
+    container_name: "mysql-db"
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Qwaszx12!'
+  wordpress:
+    container_name: "tuiuiu-wordpress"
+    image: wordpress
+    volumes:
+      - ./wp-volume:/var/www/html
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_PASSWORD: 'Qwaszx12!'
